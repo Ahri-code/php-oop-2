@@ -5,6 +5,7 @@
 }
 
 .container {
+    width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -12,4 +13,14 @@
     background-color: black;
     color: white;
     padding: 1rem 0;
+}
+
+.card {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+img {
+    width: 150px;
 }

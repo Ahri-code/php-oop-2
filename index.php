@@ -2,9 +2,14 @@
 
 require './models/products.php';
 require './models/animal.php';
-require './models/filter.php';
 
-$test = new Product();
+$catFood = new Filter("Iams", "Dry food for cat", "15.00 €", "./img/catFood.jpg", "cat", "food");
+
+$dogToy = new Filter("Petface Honking Duck", "Toy for dog", "16,00 €", "./img/dogToy.jpg", "dog", "toy");
+
+$catToy = new Filter("Sound-Mouse Cat Toy", "Toy for cat", "2.50 €", "./img/catToy.jpg", "cat", "toy");
+
+$products = [$catFood, $dogToy, $catToy];
 
 ?>
 
@@ -25,10 +30,16 @@ $test = new Product();
         </header>
     
         <main>
-            <p><?= $test->name ?></p>
-            <p><?= $test->description ?></p>
-            <p><?= $test->price ?></p>
-            <p><?= $test->image ?></p>
+            <div class="card">
+            <?php foreach($products as $product){ ?>
+                <div>
+                    <img src="<?php $product->printImg(); ?>">
+                    <h3><?php $product->printName(); ?></h3>
+                    <p><?php $product->printDescription(); ?></p>
+                    <p><?php $product->printPrice(); ?></p>
+                </div>
+            <?php } ?>
+            </div>
         </main>
     </div>
 

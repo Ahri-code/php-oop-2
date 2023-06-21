@@ -1,9 +1,18 @@
 <?php 
 
-class Animal extends Product {
+class Filter extends Product {
     
-    protected $species;
+    public $filter;
 
+    function __construct($name = "debug", $description = "lorem ipsum", $price = "0", $image = "../img/standard.jpg", $species = "cat", $filter = "none")
+    {
+        $this->name = $name;
+        $this->description = $description;
+        $this->price = $price;
+        $this->image = $image;
+        $this->species = $species;
+        $this->filter = $filter;
+    }
 }
 
 ?>
