@@ -11,6 +11,10 @@ $catToy = new Filter("Sound-Mouse Cat Toy", "Toy for cat", "2.50 €", "./img/ca
 
 $products = [$catFood, $dogToy, $catToy];
 
+$products[0]->setQuantity(20);
+$products[0]->setQuantity(0);
+$products[0]->setQuantity(10);
+
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +41,19 @@ $products = [$catFood, $dogToy, $catToy];
                     <h3><?= $element->name; ?></h3>
                     <p><?= $element->description; ?></p>
                     <p><?= $element->price; ?></p>
+                    <p>
+                        <?php
+                        try {
+                            echo $element->getQuantity();
+                        }
+                        catch (RangeException $e){
+                            echo $e->getMessage();
+                        }
+                        catch (Exception $e) {
+                            echo $e->getMessage();
+                        }
+                        ?>
+                    </p>
                 </div>  
             <?php } ?>
             </div>

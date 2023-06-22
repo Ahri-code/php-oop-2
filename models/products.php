@@ -1,6 +1,9 @@
-<?php 
+<?php
 
+require '../traits/trait.php';
 class Product {
+
+    use onStock;
 
     public $name;
     public $description;
