@@ -16,22 +16,6 @@ class Product {
         $this->image = $image;
         $this->species = $species;
     }
-
-    public function printName() {
-        return $this->name;
-    }
-    
-    public function printImg() {
-        return $this->image;
-    }
-
-    public function printDescription() {
-        return $this->description;
-    }
-
-    public function printPrice() {
-        return $this->price;
-    }
 }
 
 ?>

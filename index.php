@@ -31,13 +31,13 @@ $products = [$catFood, $dogToy, $catToy];
     
         <main>
             <div class="card">
-            <?php foreach($products as $product){ ?>
+            <?php foreach($products as $element){ ?>
                 <div>
-                    <img src="<?php $product->printImg(); ?>">
-                    <h3><?php $product->printName(); ?></h3>
-                    <p><?php $product->printDescription(); ?></p>
-                    <p><?php $product->printPrice(); ?></p>
-                </div>
+                    <img src="<?= $element->image; ?>" class="image">
+                    <h3><?= $element->name; ?></h3>
+                    <p><?= $element->description; ?></p>
+                    <p><?= $element->price; ?></p>
+                </div>  
             <?php } ?>
             </div>
         </main>

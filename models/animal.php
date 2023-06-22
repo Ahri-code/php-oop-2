@@ -6,11 +6,7 @@ class Filter extends Product {
 
     function __construct($name = "debug", $description = "lorem ipsum", $price = "0", $image = "../img/standard.jpg", $species = "cat", $filter = "none")
     {
-        $this->name = $name;
-        $this->description = $description;
-        $this->price = $price;
-        $this->image = $image;
-        $this->species = $species;
+        parent::__construct($name, $description, $price, $image, $species);
         $this->filter = $filter;
     }
 }
